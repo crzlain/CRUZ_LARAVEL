@@ -88,7 +88,7 @@
   <section id="projects" aria-label="Projects">
     <h1>Projects</h1>
     <div class="project">
-      <img src="{{ asset('images/insta.png') }}" alt="InstaRecipe Project" />
+      <img src="{{ asset('img/insta.png') }}" alt="InstaRecipe Project" />
       <h3>InstaRecipe</h3>
       <p>
         A web-based recipe-sharing platform where users can discover, post, and manage recipes. Built using Laravel, MySQL, and Bootstrap. Features: Recipe discovery, user authentication, search functionality, and content management.
@@ -101,7 +101,7 @@
       </a>
     </div>
     <div class="project">
-      <img src="{{ asset('images/nexa.jpg') }}" alt="NEXA Project" />
+      <img src="{{ asset('img/nexa.jpg') }}" alt="NEXA Project" />
       <h3>NEXA</h3>
       <p>
         A Freelancer Marketplace and web app prototype designed for students and freelancers to connect with clients, post jobs, and apply for projects. Features: Job listings, user authentication, and multi-role access.
@@ -124,18 +124,22 @@
       <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
     </form>
     <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:lorraineanncruz00@gmail.com">lorraineanncruz00@gmail.com</a></p>
       <p><i class="fas fa-phone"></i> Phone: (+63)994-206-6032</p>
+      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:lorraineanncruz00@gmail.com">lorraineanncruz00@gmail.com</a></p>
       <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/crzlain" target="_blank" rel="noopener">https://github.com/crzlain</a></p>
     </div>
-    <button class="cta"><i class="fas fa-handshake"></i> Let’s Work Together!</button>
+
   </section>
 
   <footer>
-    <p>&copy; 2025 Lorraine Ann J. Cruz. All rights reserved.</p>
+    <p>&copy; 2025 Lorraine Cruz. All rights reserved.</p>
   </footer>
 
   <!-- External JS -->
   <script src="js/script.js"></script>
+  <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
+    @csrf
+</form>
+
 </body>
 </html>

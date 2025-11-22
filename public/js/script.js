@@ -63,9 +63,9 @@ document.addEventListener("click", () => {
 
 // Logout button action placeholder
 document.getElementById("logout-btn").addEventListener("click", () => {
-  alert("Logout clicked — implement your logout logic here.");
-  // e.g. window.location.href = '/logout';
+  document.getElementById("logout-form").submit();
 });
+
 
 // "Let's Work Together" button scroll
 document.querySelector(".cta").addEventListener("click", () => {

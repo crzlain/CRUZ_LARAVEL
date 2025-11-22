@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}" style="background-color: #FFFFFF; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <form method="POST" action="{{ route('register') }}" style="background-color: #FFFFFF; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px var();">
         @csrf
 
         <!-- Name -->
@@ -31,7 +31,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a href="{{ route('login') }}" class="underline text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" style="color: #3C8EC3; text-decoration-color: #3C8EC3;">
+            <a href="{{ route('login') }}" class="underline text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" style="color: #3C8EC3; text-decoration-color: #3C8EC3;">
                 {{ __('Already registered?') }}
             </a>
 
