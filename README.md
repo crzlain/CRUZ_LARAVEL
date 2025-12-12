@@ -18,7 +18,7 @@ Responsive Layout – Adapts automatically to different screen sizes for desktop
 
 Theme -  Light and Dark mode of thes system
 
-#Technologies Used
+# Technologies Used
 
 HTML5
 CSS3
@@ -29,3 +29,10 @@ JavaScript
 Any modern web browser (Google Chrome, Mozilla Firefox, or Microsoft Edge)
 Code editor (Visual Studio Code or any text editor)
 Internet connection for external assets (if applicable)
+
+# Developer Information
+
+Name: [Your Full Name]
+Course: Bachelor of Science in Information Technology
+Institution: [Your School Name]
+Email: [Your Email Address]
