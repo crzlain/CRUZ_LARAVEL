@@ -1,0 +1,588 @@
+// Define colors as variables for easy maintainability
+$blue-dark: #3C8EC3;
+$blue-light: #6BB6E6;
+$white: #FFFFFF;
+$black: #000000;
+$blue-soft: #89C5EB;
+
+$bg-light: $white;
+$text-light: $black;
+
+$bg-dark: #0a121f;
+$text-dark: #ddd;
+$project-text-dark: #9ec9ff;
+$skills-bg: #e9f3fb;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  background-color: $bg-light;
+  color: $text-light;
+  min-height: 100vh;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $blue-dark;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue-soft;
+    text-decoration: underline;
+  }
+}
+
+header {
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  border-bottom: 2px solid $blue-light;
+  box-shadow: 0 2px 8px rgba(60, 142, 195, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  user-select: none;
+
+  .header-title {
+    h1 {
+      color: $blue-dark;
+      font-weight: 700;
+      font-size: 1.8rem;
+      cursor: default;
+      text-shadow: none;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin-left: 2rem;
+    margin-right: 1.4rem;
+
+    a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: $blue-dark;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+      text-shadow: none;
+
+      &:hover,
+      &:focus {
+        border-bottom: 2px solid $blue-light;
+        color: $blue-light;
+        outline: none;
+      }
+    }
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    #dark-mode-toggle {
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: $blue-dark;
+      user-select: none;
+      transition: color 0.3s ease;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $blue-soft;
+      }
+    }
+
+    .user-dropdown {
+      position: relative;
+
+      .user-btn {
+        background: none;
+        border: none;
+        color: $blue-dark;
+        font-size: 1.6rem;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $blue-soft;
+        }
+      }
+
+      .user-menu {
+        position: absolute;
+        top: 120%;
+        right: 0;
+        background-color: $white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(60, 142, 195, 0.3);
+        display: none;
+        min-width: 100px;
+        z-index: 1100;
+        font-weight: 600;
+
+        &.show {
+          display: block;
+        }
+
+        button {
+          width: 100%;
+          border: none;
+          background: transparent;
+          padding: 10px 16px;
+          text-align: left;
+          font-size: 1rem;
+          color: $blue-dark;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          user-select: none;
+
+          &:hover {
+            background-color: $blue-light;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  max-width: 900px;
+  margin: 3rem auto 5rem;
+  padding: 0 3rem;
+  text-align: left;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: $blue-dark;
+    margin-bottom: 0.4rem;
+    text-shadow: none;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $blue-light;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    text-shadow: none;
+  }
+}
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background: $blue-dark;
+  border: none;
+  color: $white;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px $blue-light;
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s ease;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  &:hover {
+    background: $blue-soft;
+  }
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  padding: 1rem 3rem 3rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 0 15px $blue-light;
+  background: $white;
+  color: $black;
+  transition: background 0.5s ease, color 0.5s ease;
+  border: 2px solid $blue-dark;
+
+  h1 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    color: $blue-dark;
+    text-shadow: none;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: $blue-dark;
+    text-shadow: none;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: $black;
+    text-shadow: none;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 0.7rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: $blue-dark;
+
+      i {
+        color: $blue-light;
+        filter: none;
+      }
+    }
+  }
+}
+
+#about {
+  p {
+    color: $blue-light;
+    font-weight: 500;
+  }
+}
+
+#skills {
+  background-color: $skills-bg;
+  border: 2px solid $blue-dark;
+  box-shadow: none;
+}
+
+.project {
+  margin-bottom: 3rem;
+  border-radius: 15px;
+  padding: 1rem 1rem 1.7rem 1rem;
+  background: $skills-bg;
+  border: 2px solid $blue-dark;
+  box-shadow: none;
+  color: $black;
+  transition: box-shadow 0.25s ease;
+
+  &:hover {
+    box-shadow: 0 0 35px $blue-light;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: none;
+    display: block;
+  }
+
+  h3 {
+    color: $blue-dark;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    text-shadow: none;
+  }
+
+  p {
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  a {
+    margin-right: 1.2rem;
+    font-weight: 600;
+    color: $blue-dark;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s ease;
+    text-shadow: none;
+
+    &:hover {
+      color: $blue-soft;
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  max-width: 450px;
+  margin-bottom: 2rem;
+
+  input,
+  textarea {
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 2px solid $blue-light;
+    background: $white;
+    color: $black;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: $blue-dark;
+    }
+  }
+
+  textarea {
+    min-height: 110px;
+  }
+
+  button[type="submit"] {
+    cursor: pointer;
+    background-color: $blue-dark;
+    color: $white;
+    border: none;
+    padding: 14px 0;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+    box-shadow: none;
+
+    &:hover {
+      background-color: $blue-soft;
+    }
+  }
+}
+.contact-info {
+  p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: $blue-dark;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: none;
+
+    a {
+      color: $blue-light;
+    }
+  }
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: $blue-dark;
+  color: $white;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+
+  &:hover {
+    background-color: $blue-soft;
+    color: $black;
+  }
+
+  i {
+    margin-right: 0.4rem;
+  }
+}
+
+footer {
+  text-align: center;
+  color: $blue-dark;
+  margin: 6rem 0 2rem 0;
+  font-size: 0.95rem;
+  user-select: none;
+  text-shadow: none;
+  transition: color 0.5s ease;
+
+  &.dark-mode {
+    color: $bg-dark;
+  }
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: $bg-dark;
+  color: $text-dark;
+
+  section {
+    background: #111f2d;
+    color: $text-dark;
+    border-color: $blue-soft;
+    box-shadow: 0 0 20px $blue-soft;
+  }
+  #skills {
+    background: #111f2d;
+    border-color: $blue-soft;
+    box-shadow: 0 0 20px $blue-soft;
+  }
+  .project {
+    background: #111f2d;
+    border-color: $blue-soft;
+    box-shadow: none;
+    color: $project-text-dark;
+  }
+  header {
+    background-color: #111f2d;
+    border-color: $blue-soft;
+    box-shadow: 0 0 15px $blue-soft;
+  }
+  header .header-title h1,
+  nav a,
+  .contact-info p {
+    color: $blue-soft;
+    text-shadow: none;
+  }
+  nav a:hover,
+  nav a:focus {
+    border-color: $blue-light;
+    color: $blue-light;
+    text-shadow: none;
+  }
+  #dark-mode-toggle {
+    color: $blue-soft;
+  }
+  .user-btn {
+    color: $blue-soft;
+
+    &:hover {
+      color: $blue-light;
+    }
+  }
+  .user-menu {
+    background-color: #092233;
+    border-color: $blue-soft;
+    box-shadow: 0 4px 12px rgba(38, 202, 216, 0.7);
+  }
+  .user-menu button {
+    color: $blue-soft;
+
+    &:hover {
+      background-color: $blue-light;
+      color: $black;
+    }
+  }
+  .hero h1 {
+    color: $blue-soft;
+    text-shadow: none;
+  }
+  .hero p {
+    color: $blue-light;
+    text-shadow: none;
+  }
+  a {
+    color: $blue-soft;
+
+    &:hover {
+      color: $blue-light;
+      text-decoration: underline;
+    }
+  }
+  .project h3 {
+    color: $blue-soft;
+    text-shadow: none;
+  }
+  input,
+  textarea {
+    background: #092233;
+    color: $blue-soft;
+    border-color: $blue-light;
+    box-shadow: none;
+
+    &:focus {
+      border-color: $blue-soft;
+      color: $white;
+    }
+  }
+  button[type="submit"] {
+    background-color: $blue-soft;
+    color: $black;
+    box-shadow: none;
+
+    &:hover {
+      background-color: $blue-light;
+      color: $black;
+    }
+  }
+  #scroll-to-top {
+    background-color: $blue-soft;
+    color: $black;
+    box-shadow: none;
+
+    &:hover {
+      background-color: $blue-light;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  header {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+  nav {
+    flex-grow: 1;
+    justify-content: center;
+    gap: 2rem;
+    margin-right: 0;
+    order: 2;
+  }
+  .header-controls {
+    order: 3;
+    margin-left: 0;
+  }
+  .hero {
+    padding: 0 2rem;
+  }
+  section {
+    padding: 1.5rem 2rem 3rem 2rem;
+  }
+}
