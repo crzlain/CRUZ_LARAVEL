@@ -32,7 +32,7 @@ Internet connection for external assets (if applicable)
 
 # Developer Information
 
-Name: [Your Full Name]
-Course: Bachelor of Science in Information Technology
-Institution: [Your School Name]
-Email: [Your Email Address]
+Name: Lorraine Ann J. Cruz
+Course: Bachelor of Science in Computer science
+Institution: City College of Angeles
+Email: lacruz23-0274@cca.edu.ph
