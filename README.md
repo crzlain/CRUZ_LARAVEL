@@ -32,7 +32,10 @@ Internet connection for external assets (if applicable)
 
 # Developer Information
 
-Name: Lorraine Ann J. Cruz
+Name: Lorraine Ann J. Cruz,
+
 Course: Bachelor of Science in Computer science
+
 Institution: City College of Angeles
+
 Email: lacruz23-0274@cca.edu.ph
